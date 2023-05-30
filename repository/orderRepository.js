@@ -7,15 +7,15 @@ module.exports = class OrderRepository extends orderMongo{
         super(orderModel)
     }
     async getOrders() {
-        const data = await this.getOrders()
+        const data = await this.getAllOrders()
         return data
     }
     async getOrderByMail(email) {
         const data = await this.getByMail(email)
         return data
     }
-    async addOrder(payload) {
-        const data = await this.newOrder(payload)
+    async addThisOrder(payload) {
+        const data = await this.addOrder(payload)
         return data
     }
 }

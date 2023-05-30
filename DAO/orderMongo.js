@@ -4,7 +4,7 @@ module.exports = class Container {
   constructor(model) {
     this.model = model;
   }
-  async getOrders() {
+  async getAllOrders() {
     try {
       const data = await this.model.find({});
       return data;

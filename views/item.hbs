@@ -11,31 +11,22 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
     />
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
 
   <body>
     <header id="header" class="header">
+       </div>
       <div class="menu-buttons">
-        <input
-          class="btn"
-          type="button"
-          value="Home"
-          onclick="location.href='/products'"
-        />
-        <input class="btn" type="button" value="cart" onClick="DetailCart()" />
-        <input
-          class="btn"
-          type="button"
-          value="chat"
-          onclick="location.href=`/chat/{{user}}`"
-        />
-        <input
-          class="btn"
-          type="button"
-          value="orders"
-          onclick="location.href='/orders'"
-        />
+        <span class="material-symbols-outlined">shopping_cart<input class="btn" type="button" value="carrito"onClick="DetailCart()"/></span>
+        <span class="material-symbols-outlined">
+chat
+<input class="btn" type="button" value="Chat" onclick="location.href='/chat/{{user}}'"/>
+</span>
+        <span class="material-symbols-outlined">
+list_alt <input class="btn" type="button" value="Compras" onclick="location.href='/orders'"/></span>
+      </div>
       </div>
       <h1 class="h1">Moon Accesorios</h1>
       <div class="header-div">

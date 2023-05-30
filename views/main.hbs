@@ -28,23 +28,23 @@
       </div class="data">
          <div class="header">
       <div class="description">
-        <div class="content" id="firstname">{{firstname}}</div>
-        <div class="content" id="lastname">{{lastname}}</div>
+        <div class="content" id="firstname">{{firstname}} </div>
       </div>
-      <div class="description">
-        <div class="content" id="username">{{email}}</div>
+        <div class="description">
+       <div class="rol" id="rol"></div>
       </div>
-      <div class="description">
-        <div class="content" id="rol"></div>
-      </div>
+            <h1 class="store">Moon Accesorios</h1>
     </div>
       <div class="menu-buttons">
         <span class="material-symbols-outlined">shopping_cart<input class="btn" type="button" value="carrito"onClick="DetailCart()"/></span>
-     <input class="btn" type="button" value="chat" onclick="location.href='/chat/{{user}}'"/>
-        <input class="btn" type="button" value="order" onclick="location.href='/orders'"/>
+        <span class="material-symbols-outlined">
+chat
+<input class="btn" type="button" value="Chat" onclick="location.href='/chat/{{user}}'"/>
+</span>
+        <span class="material-symbols-outlined">
+list_alt <input class="btn" type="button" value="Compras" onclick="location.href='/orders'"/></span>
       </div>
       </div>
-      <h1 class="store">Moon Accesorios</h1>
      
     </header>
  

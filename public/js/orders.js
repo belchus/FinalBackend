@@ -12,8 +12,8 @@ const array = [
 fetch(`/api/orders/${email}`)
 .then((res) => res.json())
 .then((orders) => {
-    const order = orders.order.map((thisOrder) =>{
-        const products = thisOrder.order.map((thisProduct) => `
+    const myorder = orders.order.map((thisOrder) =>{
+        const products = thisOrder.myorder.map((thisProduct) => `
         <div class="product">
         Title: ${thisProduct.title}<br>
         Items: ${thisProduct.qty}<br>
@@ -32,5 +32,5 @@ fetch(`/api/orders/${email}`)
         </div>
         `;
     }).join("");
-    orderContainer.innerHTML = order
+    orderContainer.innerHTML = myorder
 })

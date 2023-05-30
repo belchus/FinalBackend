@@ -5,8 +5,6 @@ const status = document.getElementById("status");
 const category = document.getElementById("category");
 const menu = document.getElementById("menu");
 const firstname = document.getElementById("firstname").innerHTML;
-const lastName = document.getElementById("lastname").innerHTML;
-const email = document.getElementById("username").innerHTML;
 let alreadyRedirected = false;
 
 let userId = 0;
@@ -20,29 +18,16 @@ function admin() {
   }
 }
 
-/*
-fetch("/api/products/category")
-  .then((res) => res.json())
-  .then((categories) => {
-    const allcategory = categories
-      .map(
-        (thisCategory) => `
-  <button type="button" onClick=displayCategory('${thisCategory}') class="btn">${thisCategory.toUpperCase()}</button>
-  `
-      )
-      .join("");
-    category.innerHTML = allcategory;
-  });
-  */
+
 async function userType(rol, id) {
   const userType = document.getElementById("rol");
   if ((await rol) == "true" || (await rol) == true) {
-    userType.innerHTML = `Rol: Admin`;
+    userType,innerHTML= `Admin`;
     isAdmin = true;
     userId = await id;
     updateUser(await id);
   } else {
-    userType.innerHTML = "Rol: Client";
+    userType.innerHTML = "Client";
     userId = await id;
     updateUser(await id);
   }
@@ -78,12 +63,6 @@ async function getProduct(id) {
   return data;
 }
 
-async function getProductsByCat(category) {
-  let products = await fetch(`/api/products/categories/${category}`);
-  let data = await products.json();
-  return data;
-}
-
 async function getThisCart(id) {
   console.log(id);
   let cart = await fetch(`/api/cart/${id}/products/`);
@@ -93,7 +72,7 @@ async function getThisCart(id) {
 
 async function mainBody() {
   Toastify({
-    text: ` ${lastName} is online`,
+    text: ` ${firstname} is online`,
     className: "info",
     position: "right",
     gravity: "bottom",
@@ -126,17 +105,17 @@ async function mainBody() {
     <div class="image-container"><img class="image" src="${product.thumbnail}" alt=""></div>
     <div class="detail-container">
         <p class="description-title">${product.title}</p>
-        <p class="description-card"><strong>-tipo:</strong> ${product.code}<br>
-        <strong>-description:</strong><br>${product.description}<br>
-        <strong>-price:</strong> $:${product.price}-<br>
-        <strong>-stock:</strong> ${product.stock}
+        <p class="description-card"><strong>-Categoria:</strong> ${product.code}<br>
+        <strong>-Precio:</strong> $:${product.price}<br>
+        <strong>-En stock:</strong> ${product.stock}
         </p>
     </div>
     <div class="form">
         <input class="input-number" id="cant${product.id}" onkeydown="return false" step="1" min="1" max="${product.stock}" value="1" type="number" name="cantidad">
+        <input class="btn" type="button" onclick="viewProduct(${product.id})" name="boton" value="Detalle">
         <input class="btn" type="submit" onclick="addToCart(${product.id},'${product.title}')", name="boton" value="Comprar">
     </div>
-    <input class="btn" type="button" onclick="viewProduct(${product.id})" name="boton" value="ver Detalle">
+   
     </div>
     <div class="form">
     <input style="display:${admin()}" class="btn" type="button" onclick="updateThisProduct(${
@@ -151,35 +130,6 @@ async function mainBody() {
     main.innerHTML += content;
   });
 }
-
-async function displayCategory(category) {
-  main.innerHTML = "";
-  const products = await getProductsByCat(category);
-  products.forEach((products) => {
-    const addValues = { id: products.id, title: products.title };
-    document.createElement("div");
-    const content = `
-<div class="card-container">
-    <div class="image-container"><img class="image" src="${products.thumbnail}" alt=""></div>
-    <div class="detail-container">
-        <p class="description-title">${products.title}</p>
-        <p class="description-card"><strong>-tipo:</strong> ${products.code}<br>
-        <strong>-description:</strong><br>${products.description}<br>
-        <strong>-price:</strong> $:${products.price}-<br>
-        <strong>-stock:</strong> ${products.stock}
-        </p>
-    </div>
-    <div class="form">
-        <input class="input-number" id="cant${product.id}" onkeydown="return false" step="1" min="1" max="${product.stock}" value="1" type="number" name="cantidad">
-        <input class="btn" type="submit" onclick="addToCart(${product.id},'${product.title}')", name="boton" value="Comprar">
-    </div>
-    <input class="btn" type="button" onclick="viewProduct(${product.id})" name="boton" value=" ver Detalle">
-</div>
-`;
-    main.innerHTML += content;
-  });
-}
-
 
 async function newProduct() {
   const content = `
@@ -356,10 +306,10 @@ async function viewProduct(id) {
     }" alt=""></div>
     <div class="detail-container">
         <p class="description-title">${product.title}</p>
-        <p class="description-card"><strong>-tipo:</strong> ${product.code}<br>
-        <strong>-description:</strong><br>${product.description}<br>
-        <strong>-price:</strong> $:${product.price}-<br>
-        <strong>-stock:</strong> ${product.stock}
+        <p class="description-card"><strong>Categoria:</strong> ${product.code}<br>
+        <strong>-Descripcion:</strong><br>${product.description}<br>
+        <strong>-Precio:</strong> $:${product.price}<br>
+        <strong>-En stock:</strong> ${product.stock}
         </p>
     </div>
     <div class="form">
@@ -639,13 +589,13 @@ async function DetailCart() {
                     <div class="image-container"><img class="image" src="${product.thumbnail}" alt=""></div>
                     <div class="detail-container">
                         <p class="description-title">${product.title}</p>
-                        <p class="description-card"><strong>-tipo:</strong> ${product.code}<br>
-                        <strong>-description:</strong><br>${product.description}<br>
-                        <strong>-price:</strong> $:${product.price}-<br>
-                        <strong>-stock:</strong> ${product.stock}
+                        <p class="description-card"><strong>-Categoria:</strong> ${product.code}<br>
+                        <strong>-Descripcion:</strong><br>${product.description}<br>
+                        <strong>-Precio:</strong> $:${product.price}<br>
+                        <strong>-En Stock:</strong> ${product.stock}
                         </p>
                     </div>
-                    <input class="btn" type="button" onclick="deleteFromCart(${product.id}, '${product.title}')" name="boton" value="deleteFromCart">
+                    <input class="btn" type="button" onclick="deleteFromCart(${product.id}, '${product.title}')" name="boton" value="Eliminar">
                 </div>
                 `;
         main.innerHTML += content;

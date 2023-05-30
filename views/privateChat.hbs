@@ -4,18 +4,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="/socket.io/socket.io.js"></script>
+       <link rel="stylesheet" href="./css/main.css" />
     <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
-    />
     <title>{{title}}</title>
   </head>
-  <body>
+  <body> <header id="header" >
+       <div class="header-div">
+        <div class="user-options">
+          <div class="options-container">
+            <div class="logout">
+            <input class="btn"type="button"value="Logout"onclick="location.href='/logout'"/>
+            </div>
+          </div>
+          <div>
+          <div class="avatar-container">
+            <img class="avatar" src="/{{avatar}}" alt="50px" />
+          </div>
+        </div>
+      </div class="data">
+         <div class="header">
+      <div class="description">
+        <div class="content" id="firstname">{{firstname}} </div>
+      </div>
+        <div class="description">
+       <div class="rol" id="rol"></div>
+      </div>
+            <h1 class="store">Moon Accesorios</h1>
+    </div>
+      <div class="menu-buttons">
+        <span class="material-symbols-outlined">shopping_cart<input class="btn" type="button" value="carrito"onClick="DetailCart()"/></span>
+        <span class="material-symbols-outlined">
+chat
+<input class="btn" type="button" value="Chat" onclick="location.href='/chat/{{user}}'"/>
+</span>
+        <span class="material-symbols-outlined">
+list_alt <input class="btn" type="button" value="Compras" onclick="location.href='/orders'"/></span>
+      </div>
+      </div>
+     
+    </header>
+ 
+    <div id="menu"></div>
+    <div class="header" id="category"></div>
+    <main id="main"></main> 
     <h2>{{user.user}}</h2>
     <div class="chatCont">
       <div class="thisinbox">
@@ -35,10 +70,10 @@
         </div>
       </div>
     </div>
-    <input class="btn bottom" type="button" value="exit" onclick="location.href=`/products`"/>
+    <input class="btn bottom" type="button" value="Home" onclick="location.href=`/products`"/>
     <script>
       const thisUser = {user: `{{user.user}}`, firstname: `{{user.firstname}}`,
-      lastname: `{{user.lastname}}`, tipo: `{{user.tipo}}`}</script>
+      lastname: `{{user.lastname}}`, tipo: `{{user.rol}}`}</script>
     <script src="/js/privateChat.js"></script>
 
   </body>

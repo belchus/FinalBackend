@@ -17,25 +17,14 @@ function admin() {
   }
 }
 
-
-fetch('/api/products/categories')
-.then(res => res.json())
-.then(categories=> {
-  const category = categories.map((thisCategory) =>`
-  <button type="button" onClick=displayCategory('${thisCategory}') class="btn">${thisCategory.toUpperCase()}</button>
-  `) 
-  .join("")
-  category.innerHTML = category
-})
-
 async function userType(rol, id) {
   const userType = document.getElementById(rol);
   if ((await rol) == "true" || (await rol) == true) {
-    userType.innerHTML = "rol: Admin";
+    userType.innerHTML = "Admin";
     isAdmin = true;
     userId = await id;
   } else {
-    userType.innerHTML = "rol: Client";
+    userType.innerHTML = "Client";
     userId = await id;
   }
 }
@@ -56,12 +45,13 @@ async function getProductId(id) {
   let data = await product.json();
   return data;
 }
-
+/*
 async function getProductsByCat(category) {
   let product = await fetch(`/api/products/categories/${category}`);
   let data = await product.json();
   return data;
 }
+*/
 
 
 async function getThisCart(id) {
@@ -85,34 +75,6 @@ async function mainBody() {
     menu.innerHTML = cartOptions;
   }
   viewProduct(productId);
-}
-
-async function displayCategory(category) {
-  main.innerHTML = ""
-  const products = await getProductsByCat(category);
-  products.forEach((product) => {
-    const addValues = { id: product.id, title: product.title };
-    document.createElement("div");
-    const content = `
-<div class="card-container">
-    <div class="image-container"><img class="image" src="${product.thumbnail}" alt=""></div>
-    <div class="detail-container">
-        <p class="description-title">${product.title}</p>
-        <p class="description-card"><strong>-tipo:</strong> ${product.code}<br>
-        <strong>-description:</strong><br>${product.description}<br>
-        <strong>-price:</strong> $:${product.price}-<br>
-        <strong>-stock:</strong> ${product.stock}
-        </p>
-    </div>
-    <div class="form">
-        <input class="input-number" id="cant${product.id}" onkeydown="return false" step="1" min="1" max="${product.stock}" value="1" type="number" name="cantidad">
-        <input class="btn" type="submit" onclick="addToCart(${product.id},'${product.title}')", name="boton" value="addToCart">
-    </div>
-    <input class="btn" type="button" onclick="viewProduct(${product.id})" name="boton" value="ver Detalle">
-</div>
-`;
-    main.innerHTML += content;
-  });
 }
 
 async function newpProduct() {
@@ -286,21 +248,19 @@ async function viewProduct(id) {
 
   if(product.error) {
     const content=`
-    <div class="sin-product">Lo sentimos, el producto solicitado no existe </div>
+    <div class="sin-product">El producto no existe</div>
     `
     main.innerHTML = content
   } else {
     const content = `
     <div class="card-container">
-        <div class="image-container"><img class="image" src="${
-          product.thumbnail
-        }" alt=""></div>
+        <div class="image-container"><img class="image" src="${product.thumbnail}" alt=""></div>
         <div class="detail-container">
             <p class="description-title">${product.title}</p>
-            <p class="description-card"><strong>-tipo:</strong> ${product.code}<br>
-            <strong>-description:</strong><br>${product.description}<br>
-            <strong>-price:</strong> $:${product.price}-<br>
-            <strong>-stock:</strong> ${product.stock}
+            <p class="description-card"><strong>Categoria:</strong> ${product.code}<br>
+            <strong>-Detalle</strong><br>${product.description}<br>
+            <strong>-Precio:</strong> $:${product.price}-<br>
+            <strong>-Stock:</strong> ${product.stock}
             </p>
         </div>
         <div class="form">

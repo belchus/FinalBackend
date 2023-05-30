@@ -4,7 +4,7 @@ const order = new orderRepo()
 
 
 async function allOrders(req, res) {
-    const result = await order.getAllOrders()
+    const result = await order.getOrders()
     errorCheck(req, res, result)
 }
 
@@ -15,7 +15,7 @@ async function listByMail(req, res) {
 }
 
 async function saveOrder(req, res) {
-    const result = await order.newOrder(req.body)
+    const result = await order.addThisOrder(req.body)
     errorCheck(req, res, result)
 }
 
