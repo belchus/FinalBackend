@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./css/main.css" />
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />   
     <title>{{title}}</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -38,7 +39,7 @@
       </div>
     </div>
       <div class="menu-buttons">
-        <input class="btn" type="button" value="cart" onClick="DetailCart()"/>
+        <span class="material-symbols-outlined">shopping_cart<input class="btn" type="button" value="carrito"onClick="DetailCart()"/></span>
      <input class="btn" type="button" value="chat" onclick="location.href='/chat/{{user}}'"/>
         <input class="btn" type="button" value="order" onclick="location.href='/orders'"/>
       </div>

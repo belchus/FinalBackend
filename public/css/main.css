@@ -1,23 +1,49 @@
-.avatar{
-    width: 10vw;
-    height: 10vh;
-}
-
-.store{
-    font-family: 'Bebas Neue', sans-serif;
-    font-family: 'Tilt Neon', cursive;
-    text-align: center;
-    color: black;
-    font-size: 60px;
-    background-color:  rgb(88, 58, 88);
-    margin-top: 60px;
-    }
-
-    .data{
-        text-align: right;
-    }
-
-body{
-        background-color:rgb(60, 2, 87);
-        color: white;
-    }
+/* CSS styles for header */
+#header {
+    background-color: #f1f1f1;
+    padding: 20px;
+  }
+  
+  .store {
+    color: #333;
+    font-size: 24px;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .user-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logout {
+    margin-right: 20px;
+  }
+  
+  /* CSS styles for buttons */
+  .btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  /* CSS styles for main content */
+  #main {
+    margin-top: 20px;
+  }
+  
+  /* CSS styles for menu buttons */
+  .menu-buttons {
+    margin-top: 20px;
+  }
+  
+  .menu-buttons input[type="button"] {
+    margin-right: 10px;
+  }

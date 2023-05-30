@@ -108,7 +108,7 @@ async function displayCategory(category) {
         <input class="input-number" id="cant${product.id}" onkeydown="return false" step="1" min="1" max="${product.stock}" value="1" type="number" name="cantidad">
         <input class="btn" type="submit" onclick="addToCart(${product.id},'${product.title}')", name="boton" value="addToCart">
     </div>
-    <input class="btn" type="button" onclick="viewProduct(${product.id})" name="boton" value="ver product">
+    <input class="btn" type="button" onclick="viewProduct(${product.id})" name="boton" value="ver Detalle">
 </div>
 `;
     main.innerHTML += content;

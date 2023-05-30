@@ -1,0 +1,48 @@
+/* CSS styles for header */
+.header {
+    background-color: #f1f1f1;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .menu-buttons {
+    display: flex;
+  }
+  
+  .menu-buttons .btn {
+    margin-right: 10px;
+  }
+  
+  .h1 {
+    color: #333;
+    font-size: 24px;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* CSS styles for content */
+  .description {
+    margin-bottom: 10px;
+  }
+  
+  .content {
+    margin-right: 10px;
+  }
+  
+  /* CSS styles for buttons */
+  .btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Additional CSS styles for other elements */
+  /* Add your own custom styles here */
+  
