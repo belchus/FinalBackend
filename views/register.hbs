@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/user.css" />
+    <title>{{title}}</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tilt+Neon&display=swap" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  </head>
+  <body class="body">
+    <div>
+      <h1 class="store">MOON ACCESORIOS</h1>
+    </div>
+    <div id="login-form" class="login-vertical">
+      <h2 class="login-title">Register</h2>
+       <div class="container">
+      <label for="admin">Tipo de usuario</label>
+      <select id="admin" class="campos">
+        <option value="false">cliente</option>
+        <option value="true">admin</option>
+      </select>
+      <label for="firstname">Nombre</label>
+      <input
+        class="input firstname"
+        type="text"
+        id="firstname"
+        name="firstname"
+        required
+      />
+      <label for="lastname">Apellido</label>
+      <input
+        class="input lastname"
+        type="text"
+        id="lastname"
+        name="lastname"
+
+        required
+      />
+      <label for="address">Direccion</label>
+      <input
+        class="input address"
+        type="text"
+        id="address"
+        name="address"
+        required
+      />
+      <label for="email">Email</label>
+      <input
+        class="input form-email"
+        type="email"
+        id="email"
+        name="email"
+
+        required
+      />
+      <label for="email2">Email</label>
+      <input
+        class="input form-email2"
+        type="email"
+        id="email2"
+        name="email2"
+
+        required
+      />
+      <label for="password">Contraseña</label>
+      <input
+        class="input form-password"
+        type="password"
+        id="password"
+        name="password"
+        required
+      />
+      <label for="password2">Contraseña</label>
+      <input
+        class="input form-password2"
+        type="password"
+        id="password2"
+        name="password2"
+        required
+      />
+      <label class="fileInp" for="archivo">Subir Avatar</label>
+      <span class="thisFile"></span>
+      <input
+        class="inputFile form-file"
+        type="file"
+        id="archivo"
+        name="archivo"
+        onchange="getFile(event)"
+        accept=".jpg"
+        required
+      />
+      <button class="btn" id="btn" onclick="newUser()">Register</button>
+    </div>
+    </div>
+    <button class="btn" onclick="location.href='/'" type="button">
+      LogIn
+    </button>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js/register.js"></script>
+  </body>
+</html>

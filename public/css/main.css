@@ -1,0 +1,23 @@
+.avatar{
+    width: 10vw;
+    height: 10vh;
+}
+
+.store{
+    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Tilt Neon', cursive;
+    text-align: center;
+    color: black;
+    font-size: 60px;
+    background-color:  rgb(88, 58, 88);
+    margin-top: 60px;
+    }
+
+    .data{
+        text-align: right;
+    }
+
+body{
+        background-color:rgb(60, 2, 87);
+        color: white;
+    }

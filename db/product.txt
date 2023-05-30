@@ -1,0 +1,53 @@
+[
+  {
+    "title": "Daisy"",
+    "price":2999,
+    "code": "pulsera"
+    "thumbnail": "https://i.postimg.cc/Pq7zR1bx/pulsera4.jpg",
+    "stock": "15",
+    "description": "Dijes de margarita de acero quirurgico",
+    "id": 1,
+    "timestamp": 1672089130430
+  },
+   {
+   "title": "ButterFly",
+    "price":2999,
+    "code": "aro"
+    "thumbnail": "https://i.postimg.cc/T1DRJJk6/aro6.webp",
+    "stock": "15",
+    "description": "Aros de mariposa con cuarzo violeta",
+    "id": 2,
+    "timestamp": 1672089130430
+  },
+   {
+    "title": "prueba",
+    "price":3000,
+    "code": "prueba",
+    "thumbnail": "www.hola.com",
+    "stock": "15",
+    "description": "pruebaa.",
+    "id": 1,
+    "timestamp": 1672089130430
+  },
+   {
+    "title": "Rose",
+    "price":4000,
+    "code": "cadenita",
+    "thumbnail": "https://i.postimg.cc/25hJmVpg/cadenita7.jpg",
+    "stock": "15",
+    "description": "Dije de brujula bañada en oro",
+    "id": 1,
+    "timestamp": 1672089130430
+  },
+   {
+    "title": "Pinky",
+    "price":1900,
+    "code": "pulsera",
+    "thumbnail":https://i.postimg.cc/W486sMwT/pulsera2.jpg",
+    "stock": "15",
+    "description": "Cuentas de colores pasteles y fleco",
+    "id": 1,
+    "timestamp": 1672089130430
+  }
+
+]
