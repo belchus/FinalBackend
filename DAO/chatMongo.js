@@ -77,7 +77,7 @@ module.exports = class ChatMongo {
 
 async newchannel(data) {
     try {
-      const channel = {tipo: data.tipo, email: data.email, nombre: data.nombre, mensajes: [this.messageBuilder(data)] };
+      const channel = {tipo: data.tipo, email: data.email, nombre: data.nombre, mensajes: [this.msgDetail(data)] };
       await this.model.create(channel);
     } catch (error){
       logger.error(error)

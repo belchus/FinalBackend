@@ -5,6 +5,8 @@ const { sendSMS } = require("../utils/twilioSMS.js");
 const { serverInfo } = require("../public/js/info.js");
 const { userFactory } = require("../repository/userFactory.js");
 
+//funciones para renderizar las paginas de hbs
+
 async function infoserver(req, res) {
   const params = {
     title: "Servidor",
@@ -24,7 +26,6 @@ async function server(req, res) {
   return res.render("server.hbs", {
     PUERTO: process.env.PUERTO,
     MODO: process.env.MODO,
-    //run: process.env.run,
     SECRET: process.env.SECRET,
     MONGOURL: process.env.MONGOURL,
     GMAIL_MAIL: process.env.GMAIL_MAIL,

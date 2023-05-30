@@ -5,7 +5,7 @@ const {auth, notAuth} = require ('../utils/authModules.js')
 
 const cart = require('../controllers/cart.js')
 
-
+//Rutas para el manejo del carrito
 router.get("/", auth, cart.allCarts);
 
 router.get("/:id/products", auth, cart.cartById);

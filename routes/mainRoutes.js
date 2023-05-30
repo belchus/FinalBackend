@@ -36,14 +36,16 @@ router.get("/logout", auth, (req, res) => {
     title: "Logout",
   });
 });
-
+//Rutas para el manejo del chat privado y el centro de chat
 
 router.get("/chat", auth, main.chatCenter);
 router.get("/chat/:email", main.privateChat);
 
+//Rutas para acceder a las ordenes de compra
 router.get('/orders', auth, main.order)
 
 
+//Rutas para acceder a la info del servidor
 router.get('/server', auth, main.server)
 
 

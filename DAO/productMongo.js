@@ -43,36 +43,7 @@ module.exports = class Container {
     }
   }
 
-  async getByCategory(category) {
-    try {
-      const data = await this.model.find({ code: category });
-      if (data.length == 0) {
-        return { error: "el producto no existe" };
-      } else {
-        return data;
-      }
-    } catch (error) {
-      logger.error(error);
-      return { error: error };
-    }
-  }
-/*
-  async getCategories() {
-    try {
-      const inventory = await this.getProducts();
-      const categories = Object.keys(
-        inventory.reduce((acc, obj) => {
-          acc[obj.code] = true;
-          return acc;
-        }, {})
-      );
-      return categories;
-    } catch (error) {
-      logger.error(error);
-      return { error: error };
-    }
-  }
-*/
+
   async saveProduct(object) {
     try {
       const data = await this.model.find({});

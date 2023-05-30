@@ -1,6 +1,9 @@
 const { userFactory } = require("../repository/userFactory.js");
 const { errorCheck } = require("../utils/errorCheck.js");
 
+
+//controllers para los usuarios
+
 async function allUsers(req, res) {
   const result = await userFactory.allUsers();
   errorCheck(req, res, result);

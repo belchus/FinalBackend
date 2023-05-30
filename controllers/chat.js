@@ -1,6 +1,6 @@
 const chatRepo = require("../repository/ChatRepository.js");
 const chat = new chatRepo();
-
+//controller para el manejo de chat
 async function allchannels() {
 
   const result = await chat. getAllChannels();

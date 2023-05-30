@@ -49,38 +49,7 @@ module.exports = class Container {
       return {error: error}
     }
   }
-/*
-  async getByCategory(category) {
-    await main.fileCheck(this.file);
-    try {
-      const file = await fs.promises.readFile(this.file, "utf-8");
-      const data = JSON.parse(file);
-      const productCategory = data.filter(
-        (product) => product.code === category
-      );
-      return productCategory;
-    } catch (error) {
-      logger.error("ERROR ", error);
-      return { error: error };
-    }
-  }
 
-  async getCategories() {
-    try {
-      const inventory = await this.getProducts();
-      const allCategories = Object.keys(
-        inventory.reduce((acc, obj) => {
-          acc[obj.code] = true;
-          return acc;
-        }, {})
-      );
-      return allCategories;
-    } catch (error) {
-      logger.error(error);
-      return { error: error };
-    }
-  }
-*/
   async saveProduct(object) {
     await main.fileCheck(this.file);
     try {

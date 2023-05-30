@@ -4,11 +4,8 @@ const {auth} = require ('../utils/authModules.js')
 const prod = require('../controllers/product.js')
 
 
+//Rutas para el manejo de productos
 router.get("/",  prod.listAll);
-
-router.get("/category/:category", auth, prod.productById)
-
-router.get("/categories", auth, prod.allCategories)
 
 router.get("/:id", auth, prod.productById);
 

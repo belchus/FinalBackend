@@ -1,6 +1,9 @@
 const {productFactory} = require('../repository/productFactory.js')
 const {errorCheck} = require('../utils/errorCheck.js')
 
+
+//controllers para los productos
+
 async function listAll(req, res) {
     const result = await productFactory.listAll();
     console.log(result);
@@ -18,16 +21,6 @@ async function productById(req, res) {
     errorCheck(req, res, result)
 };
 
-async function productByCategory(req, res) {
-    let {category} = req.params;
-    const result = await productFactory.productByCategory(category)
-    errorCheck(req, res, result)
-}
-
-async function allCategories(req, res) {
-const result = await productFactory.Categories()
-errorCheck(req, res, result)
-}
 
 async function createProduct(req, res) {
     const result = await productFactory.save(req.body);
@@ -44,4 +37,4 @@ async function deleteProduct(req, res) {
     errorCheck(req, res, result)
 }
 
-module.exports = { productById, productByCategory, allCategories, createProduct, modifyProduct, deleteProduct ,listAll,listByMongoId}
+module.exports = { productById,createProduct, modifyProduct, deleteProduct ,listAll,listByMongoId}

@@ -174,13 +174,13 @@ module.exports = class userHandler {
     }
   }
 
-  async notify(nuevoUsuario) {
+  async notify(newUser) {
     const msg = {
       asunto: "Registro",
-      mensaje: `USUARIO se ha registrado.
-      - nombre y apellido: ${nuevoUsuario.nombre} ${nuevoUsuario.apellido},
-      - dirección: ${nuevoUsuario.direccion},
-      - email: ${nuevoUsuario.email}.`,
+      mensaje: `${newUser.firstname} se ha registrado.
+        nombre y apellido: ${newUser.firstname} ${newUser.lastname},
+        dirección: ${newUser.address},
+         email: ${newUser.email}.`,
     };
     enviarMail(msg.asunto, msg.mensaje, process.env.EMAIL_DESTINATION);
   }

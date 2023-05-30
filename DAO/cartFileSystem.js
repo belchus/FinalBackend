@@ -84,7 +84,7 @@ module.exports = class Cart {
           "se creo un carrito con el item",
       };
     } else {
-      const userProducts = await this.cartViewer(main.userOnline);
+      const userProducts = await this.cartDetail(main.userOnline);
       const index = await userProducts.findIndex(
         (product) => product.id == data.id
       );
@@ -137,7 +137,7 @@ module.exports = class Cart {
     } else {
       const carts = await this.fileCatcher(this.file);
       const cart = carts[await this.cartFinder(idUser)];
-      const products = await this.cartViewer(idUser);
+      const products = await this.cartDetail(idUser);
       const index = await this.cartProductIndexer(idUser, idProd);
       products.splice(index, 1);
       const userCart = {
@@ -184,7 +184,7 @@ module.exports = class Cart {
   }
 
   async cartProductIndexer(idUser, idProduct) {
-    const products = await this.cartViewer(idUser);
+    const products = await this.cartDetail(idUser);
     const index = products.findIndex((product) => product.id == idProduct);
     return index;
   }

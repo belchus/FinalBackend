@@ -1,7 +1,7 @@
 const {errorCheck} = require ('../utils/errorCheck.js')
 const orderRepo = require ('../repository/orderRepository.js')
 const order = new orderRepo()
-
+//controlers para las ordenes
 
 async function allOrders(req, res) {
     const result = await order.getOrders()

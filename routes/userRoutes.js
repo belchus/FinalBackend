@@ -5,6 +5,8 @@ const {auth, notAuth} = require ('../utils/authModules.js')
 const {upload} = require('../utils/multer.js')
 const user = require('../controllers/user.js')
 
+//Rutas para el manejo de usuarios
+
 router.get("/", auth, user.allUsers);
 
 router.get("/:id", auth, user.userById);

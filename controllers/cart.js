@@ -2,6 +2,7 @@
 const{errorCheck} = require ('../utils/errorCheck.js')
 const {cartFactory} = require('../repository/cartFactory.js')
 
+// controller de carrito
 
 async function allCarts(req, res) {
   const result = await cartFactory.getallCarts();
