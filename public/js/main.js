@@ -110,11 +110,11 @@ async function mainBody() {
   menu.innerHTML = "";
   if (isAdmin) {
     const cartOptions = `
-        <p class="menu-name">menú administrador de ${firstname} ${lastName} </p>
-        <input class="btn" type="button" onclick="newProduct()" name="boton" value="+ product">
+        <p class="menu-name">SETTINGS </p>
+        <input class="btn" type="button" onclick="newProduct()" name="boton" value="add product">
         <a class="btn" href="/info">Info del sistema</a>
-        <a class="btn" href="/server">server(config)</a>
-        <a class="btn" href="/chat">chat(admin)</a>
+        <a class="btn" href="/server">Info del servidor</a>
+        <a class="btn" href="/chat">mensjaes</a>
         `;
    menu.innerHTML = cartOptions;
   }
