@@ -1,5 +1,7 @@
 const logger = require("./logger");
 const {allchannels,sendMessage,thischannel} = require("../controllers/chat.js");
+
+
 //Socket para el servicio de mensajeria
 module.exports = (io) => {
   io.on("connection", async (socket) => {

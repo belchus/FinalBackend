@@ -7,7 +7,7 @@ const channelTitl = document.getElementById("channelTitl");
 
 let channelEmail;
 
-
+//chat de administrador
 function setUserType(type) {
   if (type === "true") {
     return "sistema";
@@ -41,7 +41,7 @@ sendBtn.addEventListener("click", () => {
   contentMsg.value = "";
   functionImputs();
 });
-
+// conversaciones en el inbox
 socket.on("channels", (channels) => {
   channelEmail = thisUser.user;
   allChannels = channels
@@ -68,6 +68,8 @@ socket.on("channels", (channels) => {
     });
   });
 });
+
+//socket para recibir los mensajes 
 
 socket.on("recibir-mensajes", (msg) => {
   const inboxs = msg

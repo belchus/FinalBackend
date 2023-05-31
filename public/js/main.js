@@ -49,7 +49,7 @@ async function updateUser(id) {
   await fetch(url, options).then((response) => console.log(response.status));
 }
 
-
+//Trae los productos
 async function getProducts() {
   let product = await fetch("/api/products");
   console.log(product);
@@ -62,7 +62,7 @@ async function getProduct(id) {
   let data = await product.json();
   return data;
 }
-
+//Trae el carrito
 async function getThisCart(id) {
   console.log(id);
   let cart = await fetch(`/api/cart/${id}/products/`);
@@ -83,17 +83,17 @@ async function mainBody() {
       background: "linear-gradient(45deg, cornflowerblue, darkslateblue)",
     },
   }).showToast();
-
+//Trae los productos con vista de administrador
   const products = await getProducts();
   main.innerHTML = "";
   menu.innerHTML = "";
   if (isAdmin) {
     const cartOptions = `
         <p class="menu-name">SETTINGS </p>
-        <input class="btn" type="button" onclick="newProduct()" name="boton" value="add product">
+        <input class="btn" type="button" onclick="newProduct()" name="boton" value="Agregar">
         <a class="btn" href="/info">Info del sistema</a>
         <a class="btn" href="/server">Info del servidor</a>
-        <a class="btn" href="/chat">mensjaes</a>
+        <a class="btn" href="/chat">Mensjaes</a>
         `;
    menu.innerHTML = cartOptions;
   }
@@ -130,7 +130,7 @@ async function mainBody() {
     main.innerHTML += content;
   });
 }
-
+//Agrega el nuevo producto
 async function newProduct() {
   const content = `
     <div class="card-container">
@@ -223,7 +223,7 @@ async function createProduct() {
     });
   }
 }
-
+//Actualiza un producto
 async function updateThisProduct(id) {
   const product = await getProduct(id);
   const content = `
@@ -296,7 +296,7 @@ async function updateProduct(id) {
     }
   });
 }
-
+//Se ve el detalle del producto
 async function viewProduct(id) {
   const product = await getProduct(id);
   const content = `
@@ -326,7 +326,7 @@ async function viewProduct(id) {
 `;
   main.innerHTML = content;
 }
-
+//Elimina el producto
 async function deleteProduct(id) {
   const url = `/api/products/${id}`;
   const options = {
@@ -367,7 +367,7 @@ async function deleteProduct(id) {
     }
   });
 }
-
+//Crea un carrito
 async function createCart(id) {
   const url = `/api/cart/`;
   const options = {
@@ -397,7 +397,7 @@ async function createCart(id) {
     }
   });
 }
-
+//Agrega el producto al carrito
 async function addToCart(id, title) {
   const url = `/api/cart/${id}/products`;
   const payload = {
@@ -510,7 +510,7 @@ async function purchase() {
     }
   });
 }
-
+//Genera una orden de compra
 async function newOrder(order) {
   const url = "/api/orders";
   const payload = order;
@@ -551,6 +551,8 @@ async function deleteFromCart(id,title) {
   }).showToast();
   DetailCart();
 }
+
+//Se ve en detalle el carrito
 async function DetailCart() {
   if (userId == 0) {
     alert("no hay ningun usuario logueado");
@@ -605,7 +607,7 @@ async function DetailCart() {
 }
 
 
-
+//Elimina todo el carrito
 async function deleteCart(id) {
   const url = `api/cart/${id}`;
   const options = {

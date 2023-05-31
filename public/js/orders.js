@@ -9,6 +9,8 @@ const array = [
     {obj: 6},
 ]
 
+
+//Trae las ordenes generadas
 fetch(`/api/orders/${email}`)
 .then((res) => res.json())
 .then((orders) => {
@@ -16,9 +18,9 @@ fetch(`/api/orders/${email}`)
         const products = thisOrder.myorder.map((thisProduct) => `
         <div class="product">
         Title: ${thisProduct.title}<br>
-        Items: ${thisProduct.qty}<br>
-        Price: ${thisProduct.price}<br>
-        description: ${thisProduct.description}
+        ITEMS: ${thisProduct.qty}<br>
+       TOTAL: ${thisProduct.price}<br>
+        DETALLE: ${thisProduct.description}
         </div>
         `).join("");
         return`

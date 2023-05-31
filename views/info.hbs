@@ -6,18 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/socket.io/socket.io.js"></script>
+        <link rel="stylesheet" href="/css/info.css" />
     <title>{{titulo}}</title>
 </head>
 
 <body class="body">
     <h1>Info del Proceso</h1>
-    <div class="info" id="args">Argumentos de entrada:{{args}}</div>
-    <div class="info" id="plat">Nombre de plataforma:{{plat}}</div>
-    <div class="info" id="version">Versión de Node.js:{{version}}</div>
-    <div class="info" id="memoria">Memoria total reservada (rss):{{memoria}}</div>
-    <div class="info" id="exe">Path de ejecución:{{exe}}</div>
-    <div class="info" id="id">Process Id{{id}}</div>
-    <div class="info" id="path">Carpeta del proyecto:{{path}}</div>
+    <div class="info" id="args">Argumentos de entrada:  {{args}}</div>
+    <div class="info" id="plat">Nombre de plataforma:  {{plat}}</div>
+    <div class="info" id="version">Versión de Node.js:  {{version}}</div>
+    <div class="info" id="memoria">Memoria total reservada (rss):   {{memoria}}</div>
+    <div class="info" id="exe">Path de ejecución:   {{exe}}</div>
+    <div class="info" id="id">Process Id:  {{id}}</div>
+    <div class="info" id="path">Carpeta del proyecto:    {{path}}</div>
     <script src="info.js"></script>
 </body>
 

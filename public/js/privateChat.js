@@ -4,6 +4,7 @@ const contentMsg = document.getElementById("chat-imput");
 const sendBtn = document.getElementById("send");
 const channelEmail = thisUser.user;
 
+//Chat privado del cliente
 function setUserType(type) {
   if (type === "true") {
     return "sistema";
@@ -45,6 +46,7 @@ socket.on("start", (msg) => {
   socket.emit("single-channel", thisUser.user);
 });
 
+//A partir del envio del mensaje se crea un canal
 socket.on("channel", (msg) => {
 console.log(msg,"aaaa")
   const inboxs = msg
@@ -60,7 +62,7 @@ console.log(msg,"aaaa")
     .join("");
  inbox.innerHTML =inboxs;
 });
-
+//Recibe respusta
 socket.on("recibir-mensajes", (msg) => {
   const inboxs =msg
     .map(

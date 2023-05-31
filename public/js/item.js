@@ -28,6 +28,8 @@ async function userType(rol, id) {
     userId = await id;
   }
 }
+//trae todos los productos
+
 async function getProducts() {
   let product = await fetch("/api/products");
   let data = await product.json();
@@ -45,21 +47,15 @@ async function getProductId(id) {
   let data = await product.json();
   return data;
 }
-/*
-async function getProductsByCat(category) {
-  let product = await fetch(`/api/products/categories/${category}`);
-  let data = await product.json();
-  return data;
-}
-*/
 
-
+//Trae el carrito
 async function getThisCart(id) {
   let cart = await fetch(`/api/cart/${id}/products/`);
   let data = await cart.json();
   return data;
 }
 
+//Para administrador :Panel de administracion donde se ven las configuraciones
 
 async function mainBody() {
 
@@ -97,6 +93,8 @@ async function newpProduct() {
     `;
   main.innerHTML = content;
 }
+
+//Crea un producto nuevo
 
 async function createProduct() {
   const title = document.getElementById("title").value;
@@ -169,7 +167,7 @@ async function createProduct() {
     });
   }
 }
-
+//Actualiza un producto
 async function updateProduct(id) {
   const product = await getProductId(id);
   const content = `
@@ -242,7 +240,7 @@ async function updateProduct(id) {
     }
   });
 }
-
+//Se ve el detalle del producto
 async function viewProduct(id) {
   const product = await getProduct(id);
 
@@ -286,7 +284,7 @@ async function viewProduct(id) {
       main.innerHTML = content;
   }
 }
-
+//Elimina los productos
 async function deleteProduct(id) {
   const url = `/api/products/${id}`;
   const options = {
@@ -328,7 +326,7 @@ async function deleteProduct(id) {
   });
 }
 
-
+//Crea el carrito
 async function createCart(id) {
   const url = `/api/cart/`;
   const options = {
@@ -354,7 +352,7 @@ async function createCart(id) {
     }
   });
 }
-
+//Agrega el producto deseado al carrito
 async function addToCart(id, title) {
   const url = `/api/cart/${id}/products/`;
   const payload = {
@@ -390,7 +388,7 @@ async function addToCart(id, title) {
     }).showToast();
   }
 }
-
+//Para hacer una compra y se emita una orden
 async function purchase() {
   const cart = await getThisCart(userId);
   const products = [];
@@ -399,7 +397,7 @@ async function purchase() {
     products.push(listaItems);
   });
   const mail = {
-    asunto: `nuevo pedido de ${firstname} ${lastName} - (${email})`,
+    title: `nuevo pedido de ${firstname} ${lastName} - (${email})`,
     msg: `
         ${firstname} ${lastName}. Email: ${email}\n
         solicita los siguientes products:\n
@@ -451,14 +449,14 @@ async function purchase() {
     }
   });
 }
-
+//Detalle del carrito
 async function DetailCart() {
   if (userId == 0) {
     alert("no hay ningun usuario logueado");
   } else {
     const cart = await getThisCart(userId);
     const cartOptions = `
-                <p class="menu-name">carrito de ${firstname}</p>
+                <p class="menu-name">carrito</p>
                 <input class="btn" type="button" onclick="DetailCart()" name="boton" value="refresh">
                 <input class="btn" type="button" onclick="purchase()" name="boton" value="confirm">
                 `;
@@ -504,7 +502,7 @@ async function DetailCart() {
     }
   }
 }
-
+//Elimina del carrito
 async function deleteFromCart(id, title) {
   const url = `/api/cart/${userId}/products/${id}/`;
   const options = {
@@ -530,7 +528,7 @@ async function deleteFromCart(id, title) {
   }).showToast();
   DetailCart();
 }
-
+//Elimina todo el carrito
 async function deleteCart(id) {
   const url = `/api/cart/${id}`;
   const options = {

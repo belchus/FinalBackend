@@ -1,0 +1,45 @@
+/* CSS Styles */
+
+/* Reset default margin and padding */
+body, h1, div {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Body styles */
+  .body {
+    font-family: Arial, sans-serif;
+    background-color:rgb(60, 2, 87);
+    padding: 20px;
+  }
+  
+  /* Header styles */
+  h1 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Info container styles */
+  .info {
+    background-color: rgb(88, 58, 88);
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  /* Info text styles */
+  .info span {
+    font-weight: bold;
+  }
+  
+  /* ID styles */
+  #id {
+    background-color:rgb(88, 58, 88);
+  }
+  
+  /* Path styles */
+  #path {
+    background-color:rgb(88, 58, 88);
+  }
